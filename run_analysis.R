@@ -89,7 +89,7 @@ names(XY_subject_rel) <- rep25
 #Create an independent tidy data set with the average of each variable for each activity and each subject.
 
 tidy_data<-ddply(XY_subject_rel,.(Data_type,Subject,Activity),numcolwise(mean))
-write.table(tidy_data, "./tidy_data.csv", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
+write.table(tidy_data, "./tidy_data.txt", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
 
 
 
