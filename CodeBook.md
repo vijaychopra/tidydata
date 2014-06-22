@@ -9,23 +9,108 @@ The original experiments have been carried out with a group of 30 volunteers wit
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-The dataset includes the following files:
+######The dataset includes the following files:
 =========================================
 
 - 'README.md'
 - 'CodeBook.md'
 
 
-For each record it is provided:
+######For each record it is provided:
 =======================================================================
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+[1] Data_type - Is this for a Suject in Test or Training?                                                             
+[2] Subject - The id of the Subject - It has 30 possible values.                                                               
+[3] Activity - The activity type. It has 6 possible values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
+While the names of the columns are exapanded version of the original columns,  they capture mean of the original data. The variable names with prefix 'Time' capture time domain signals. The variable names with prefix 'Frequency' capture frequency domain signals. The suffix XYZ denotes 3-axial signals in the X, Y and Z directions.
 
+[4] TimeBodyAcceleration-Mean()-X                                           
+[5] TimeBodyAcceleration-Mean()-Y                                          
+[6] TimeBodyAcceleration-Mean()-Z                                          
+[7] TimeBodyAcceleration-StandardDeviation()-X                             
+[8] TimeBodyAcceleration-StandardDeviation()-Y                             
+[9] TimeBodyAcceleration-StandardDeviation()-Z                             
+[10] TimeGravityAcceleration-Mean()-X                                       
+[11] TimeGravityAcceleration-Mean()-Y                                       
+[12] TimeGravityAcceleration-Mean()-Z                                       
+[13] TimeGravityAcceleration-StandardDeviation()-X                          
+[14] TimeGravityAcceleration-StandardDeviation()-Y                          
+[15] TimeGravityAcceleration-StandardDeviation()-Z                          
+[16] TimeBodyAccelerationJerkSignal-Mean()-X                                
+[17] TimeBodyAccelerationJerkSignal-Mean()-Y                                
+[18] TimeBodyAccelerationJerkSignal-Mean()-Z                                
+[19] TimeBodyAccelerationJerkSignal-StandardDeviation()-X                   
+[20] TimeBodyAccelerationJerkSignal-StandardDeviation()-Y                   
+[21] TimeBodyAccelerationJerkSignal-StandardDeviation()-Z                   
+[22] TimeBodyAngularVelocity-Mean()-X                                       
+[23] TimeBodyAngularVelocity-Mean()-Y                                       
+[24] TimeBodyAngularVelocity-Mean()-Z                                       
+[25] TimeBodyAngularVelocity-StandardDeviation()-X                          
+[26] TimeBodyAngularVelocity-StandardDeviation()-Y                          
+[27] TimeBodyAngularVelocity-StandardDeviation()-Z                          
+[28] TimeBodyAngularVelocityJerkSignal-Mean()-X                             
+[29] TimeBodyAngularVelocityJerkSignal-Mean()-Y                             
+[30] TimeBodyAngularVelocityJerkSignal-Mean()-Z                             
+[31] TimeBodyAngularVelocityJerkSignal-StandardDeviation()-X                
+[32] TimeBodyAngularVelocityJerkSignal-StandardDeviation()-Y                
+[33] TimeBodyAngularVelocityJerkSignal-StandardDeviation()-Z                
+[34] TimeBodyAccelerationMagnitude-Mean()                                   
+[35] TimeBodyAccelerationMagnitude-StandardDeviation()                      
+[36] TimeGravityAccelerationMagnitude-Mean()                                
+[37] TimeGravityAccelerationMagnitude-StandardDeviation()                   
+[38] TimeBodyAccelerationJerkSignalMagnitude-Mean()                         
+[39] TimeBodyAccelerationJerkSignalMagnitude-StandardDeviation()            
+[40] TimeBodyAngularVelocityMagnitude-Mean()                                
+[41] TimeBodyAngularVelocityMagnitude-StandardDeviation()                   
+[42] TimeBodyAngularVelocityJerkSignalMagnitude-Mean()                      
+[43] TimeBodyAngularVelocityJerkSignalMagnitude-StandardDeviation()         
+[44] FrequencyBodyAcceleration-Mean()-X                                     
+[45] FrequencyBodyAcceleration-Mean()-Y                                     
+[46] FrequencyBodyAcceleration-Mean()-Z                                     
+[47] FrequencyBodyAcceleration-StandardDeviation()-X                        
+[48] FrequencyBodyAcceleration-StandardDeviation()-Y                        
+[49] FrequencyBodyAcceleration-StandardDeviation()-Z                        
+[50] FrequencyBodyAcceleration-MeanFreq()-X                                 
+[51] FrequencyBodyAcceleration-MeanFreq()-Y                                 
+[52] FrequencyBodyAcceleration-MeanFreq()-Z                                 
+[53] FrequencyBodyAccelerationJerkSignal-Mean()-X                           
+[54] FrequencyBodyAccelerationJerkSignal-Mean()-Y                           
+[55] FrequencyBodyAccelerationJerkSignal-Mean()-Z                           
+[56] FrequencyBodyAccelerationJerkSignal-StandardDeviation()-X              
+[57] FrequencyBodyAccelerationJerkSignal-StandardDeviation()-Y              
+[58] FrequencyBodyAccelerationJerkSignal-StandardDeviation()-Z              
+[59] FrequencyBodyAccelerationJerkSignal-MeanFreq()-X                       
+[60] FrequencyBodyAccelerationJerkSignal-MeanFreq()-Y                       
+[61] FrequencyBodyAccelerationJerkSignal-MeanFreq()-Z                       
+[62] FrequencyBodyAngularVelocity-Mean()-X                                  
+[63] FrequencyBodyAngularVelocity-Mean()-Y                                  
+[64] FrequencyBodyAngularVelocity-Mean()-Z                                  
+[65] FrequencyBodyAngularVelocity-StandardDeviation()-X                     
+[66] FrequencyBodyAngularVelocity-StandardDeviation()-Y                     
+[67] FrequencyBodyAngularVelocity-StandardDeviation()-Z                     
+[68] FrequencyBodyAngularVelocity-MeanFreq()-X                              
+[69] FrequencyBodyAngularVelocity-MeanFreq()-Y                              
+[70] FrequencyBodyAngularVelocity-MeanFreq()-Z                              
+[71] FrequencyBodyAccelerationMagnitude-Mean()                              
+[72] FrequencyBodyAccelerationMagnitude-StandardDeviation()                 
+[73] FrequencyBodyAccelerationMagnitude-MeanFreq()                          
+[74] FrequencyBodyBodyAccelerationJerkSignalMagnitude-Mean()                
+[75] FrequencyBodyBodyAccelerationJerkSignalMagnitude-StandardDeviation()   
+[76] FrequencyBodyBodyAccelerationJerkSignalMagnitude-MeanFreq()            
+[77] FrequencyBodyBodyAngularVelocityMagnitude-Mean()                       
+[78] FrequencyBodyBodyAngularVelocityMagnitude-StandardDeviation()          
+[79] FrequencyBodyBodyAngularVelocityMagnitude-MeanFreq()                   
+[80] FrequencyBodyBodyAngularvelocityJerkSignalMagnitude-Mean()             
+[81] FrequencyBodyBodyAngularvelocityJerkSignalMagnitude-StandardDeviation()
+[82] FrequencyBodyBodyAngularvelocityJerkSignalMagnitude-MeanFreq()         
+[83] AngleBetweenTimeBodyAcceleration-MeanAndGravity                        
+[84] AngleBetweenTimeBodyAccelerationJerkSignal-MeanAndGravityMean          
+[85] AngleBetweenTimeBodyAngularVelocityAndGravityMean                      
+[86] AngleBetweenTimeBodyAngularVelocityJerkSignal-Mean andGravityMean      
+[87] AngleBetweenXAndGravityMean                                            
+[88] AngleBetweenYAndGravityMean                                            
+[89] AngleBetweenZAndGravityMean   
 
 
 #Transformations performed - Cleaning up the wearable computing data
@@ -173,13 +258,13 @@ tidy_data<-ddply(XY_subject_rel,.(Data_type,Subject,Activity),numcolwise(mean))
 write.table(tidy_data, "./tidy_data.csv", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
 ```
 
-#Notes: 
-#======
+###Notes: 
+###======
 
 #####For more information about the original dataset contact: activityrecognition@smartlab.ws
 
-#License:
-#========
+###License:
+###========
 #####The original dataset has been taken from the following publication [1] 
 
-#####[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+######[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
