@@ -1,14 +1,14 @@
 #Read the files about training
-X_train <- read.table("./train/X_train.txt")
-Y_train <- read.table("./train/y_train.txt")
-subject_train <- read.table("./train/subject_train.txt")
+X_train <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
+Y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt")
+subject_train <- read.table("./data/UCI HAR Dataset/train/subject_train.txt")
 
 #Read the file about the activity labels
-activity_labels <- read.table("./activity_labels.txt")
+activity_labels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 names(activity_labels)<- c("Training_label","Activity")
 
 #Read the file about the features
-features <- read.table("./features.txt")
+features <- read.table("./data/UCI HAR Dataset/features.txt")
 features <- features[,2]
 #Use the features table to get column names of X_train
 names(X_train) <- features
@@ -22,9 +22,9 @@ XY_train_subject1 = merge(activity_labels,XY_train_subject,all=TRUE)
 XY_train_subject1$data_type <- c("train")
 
 #Read the files about test
-X_test <- read.table("./test/X_test.txt")
-Y_test <- read.table("./test/y_test.txt")
-subject_test <- read.table("./test/subject_test.txt")
+X_test <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
+Y_test <- read.table("./data/UCI HAR Dataset/test/y_test.txt")
+subject_test <- read.table("./data/UCI HAR Dataset/test/subject_test.txt")
 #features <- features[,2]
 #Use the features table to get column names of X_test
 names(X_test) <- features
@@ -89,7 +89,7 @@ names(XY_subject_rel) <- rep25
 #Create an independent tidy data set with the average of each variable for each activity and each subject.
 
 tidy_data<-ddply(XY_subject_rel,.(Data_type,Subject,Activity),numcolwise(mean))
-write.table(tidy_data, "./tidy_data.txt", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
+write.table(tidy_data, "./data/tidy_data.txt", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
 
 
 
