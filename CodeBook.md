@@ -1,6 +1,6 @@
 #Cleaning up the wearable computing data
 
-#####Read the files about training
+###Read the files about training
 ```
 X_train <- read.table("./train/X_train.txt")
 Y_train <- read.table("./train/y_train.txt")
@@ -32,7 +32,7 @@ names(XY_train_subject)[2]<- paste("Training_label")
 XY_train_subject1 = merge(activity_labels,XY_train_subject,all=TRUE)
 ```
 
-## Add an additional column to identify this data as training data
+##### Add an additional column to identify this data as training data
 ```
 XY_train_subject1$data_type <- c("train")
 ```
@@ -43,12 +43,12 @@ Y_test <- read.table("./test/y_test.txt")
 subject_test <- read.table("./test/subject_test.txt")
 features <- features[,2]
 ```
-##Use the features table to get column names of X_test
+#####Use the features table to get column names of X_test
 ```
 names(X_test) <- features
 ```
 
-##Merge X_test, Y_test and activity_labels tables
+#####Merge X_test, Y_test and activity_labels tables
 ```
 X_test_Y <- cbind(Y_test,X_test)
 XY_test_subject <- cbind(subject_test, X_test_Y)
@@ -89,7 +89,7 @@ reqcols1<- c(565,3,2,reqcols)
 XY_subject_rel <- XY_subject[,reqcols1]
 ```
 
-#####Label the data set with descriptive variable names
+###Label the data set with descriptive variable names
 ```
 rep1 <- gsub("tBodyAcc-", "TimeBodyAcceleration-", names(XY_subject_rel),ignore.case=TRUE)
 rep2 <- gsub("tGravityAcc-", "TimeGravityAcceleration-", rep1,ignore.case=TRUE)
@@ -135,7 +135,7 @@ names(XY_subject_rel) <- rep25
 ```
 tidy_data<-ddply(XY_subject_rel,.(Data_type,Subject,Activity),numcolwise(mean))
 ```
-#####Write the tidy data to a .csv file.
+###Write the tidy data to a .csv file.
 ```
 write.table(tidy_data, "./tidy_data.csv", col.names=TRUE, row.names=FALSE,sep=",", quote=FALSE)
 ```
