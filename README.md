@@ -16,7 +16,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - CodeBook.md
 - Tidy_data.txt - The first row in 'Tidy_data.txt' gives the column names. The data in the rows is separated by ","
 
-CookBook.md gives following details:
+CodeBook.md gives following details:
 
 - Details of the Variable names in Tidy_data.txt
 - Details of the transformations performed over the original data set to get the Tidy data.
