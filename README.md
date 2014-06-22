@@ -9,6 +9,7 @@ The original experiments have been carried out with a group of 30 volunteers wit
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
+
 #####The dataset includes the following files:
 =========================================
 
@@ -16,7 +17,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - CodeBook.md
 - Tidy_data.txt - The first row in 'Tidy_data.txt' gives the column names. The data in the rows is separated by ","
 
-CodeBook.md gives following details:
 
+CodeBook.md gives following details:
 - Details of the Variable names in Tidy_data.txt
 - Details of the transformations performed over the original data set to get the Tidy data.
